@@ -1,101 +1,88 @@
 
-# 🧪 Guia Profissional de Testes Automatizados — QA Automation Engineer (HumanIT)
-
----
+# 🧪 Guia Profissional de Testes Automatizados — QA Engineer (CodeWin)
 
 ## 🎯 Visão Geral / Overview
 
-Olá, sou **Artur Felipe Albuquerque Portela**, candidato à vaga de **QA Automation Engineer na HumanIT**.  
-Este guia resume o **meu processo de testes automatizados**, alinhado com as melhores práticas internacionais.
+Olá, sou **Artur Felipe Albuquerque Portela**, profissional de QA com foco em **testes automatizados de qualidade em projetos de transformação digital**.  
+Este guia resume o **meu processo de testes**, alinhado com as melhores práticas do mercado e adaptável a sistemas ERP, CRM, webapps e APIs.
 
-Hi, I'm **Artur Felipe Albuquerque Portela**, candidate for the **QA Automation Engineer position at HumanIT**.  
-This guide summarizes **my automated testing process**, aligned with international best practices.
-
----
+Hi, I'm **Artur Felipe Albuquerque Portela**, a QA professional focused on **automated quality testing in digital transformation projects**.  
+This guide summarizes **my testing process**, aligned with best practices and adaptable to ERP, CRM, web apps, and APIs.
 
 ## 🎯 Objetivo / Objective
 
-Garantir a qualidade do software através de testes automatizados contínuos e bem documentados, cobrindo cenários críticos, regressões e integrações. O foco está em entregar valor de forma ágil, confiável e escalável.
+Contribuir para o sucesso dos projetos da CodeWin com **testes eficientes, confiáveis e bem documentados**, garantindo cobertura de fluxos críticos e regressões em ambientes complexos e integrados.
 
-Ensure software quality through continuous and well-documented automated testing, covering critical scenarios, regressions, and integrations. The focus is on delivering value in an agile, reliable, and scalable manner.
-
----
+Contribute to CodeWin's project success with **efficient, reliable, and well-documented testing**, ensuring coverage of critical flows and regressions in complex and integrated environments.
 
 ## 🗂️ Estrutura Padrão / Project Structure (Cypress)
 
 ```
 project-root/
-├── cypress/               # Testes Cypress / Cypress tests
-│   ├── e2e/               # Casos de teste / Test cases
+├── cypress/               # Testes automatizados / Automated tests
+│   ├── e2e/               # Fluxos principais / Main flows
 │   ├── fixtures/          # Dados de teste / Test data
 │   ├── support/
-│   │   ├── commands.js    # Comandos customizados / Custom commands
-│   │   └── e2e.js         # Suporte global / Global support
+│   │   ├── commands.js    # Comandos reutilizáveis / Reusable commands
+│   │   └── e2e.js         # Configurações globais / Global setup
 ├── evidencias/            # Prints manuais / Manual screenshots
-├── screenshots/           # Prints automáticos / Auto screenshots
-├── videos/                # Gravações / Video recordings
-├── cypress.config.js      # Configuração Cypress / Cypress config
-├── jenkinsfile            # Pipeline CI/CD
-├── README.md              # Documentação / Documentation
+├── screenshots/           # Capturas automáticas / Auto screenshots
+├── videos/                # Execuções gravadas / Execution videos
+├── cypress.config.js      # Configuração geral / General config
+├── jenkinsfile            # Integração contínua / CI pipeline
+├── README.md              # Documentação técnica / Technical doc
 ├── package.json           # Dependências / Dependencies
 ```
-
----
 
 ## 🧰 Ferramentas / Tools I Use
 
 | Categoria / Category             | Ferramentas / Tools                             |
 |----------------------------------|-------------------------------------------------|
 | Testes E2E / UI Testing          | Cypress, Selenium WebDriver                     |
-| Testes de API / API Testing      | Postman (Newman), RestAssured, cy.request()     |
-| Relatórios / Reporting           | Allure, ExtentReports                           |
+| Testes de API / API Testing      | Postman, Newman, cy.request(), RestAssured      |
 | Integração Contínua / CI/CD      | Jenkins, GitHub Actions, Azure DevOps           |
-| Performance Testing              | JMeter, Blazemeter                              |
-| Microserviços / Microservices    | Arquitetura desacoplada / Decoupled architecture|
-| Comunicação de falhas / Alerts   | Slack, Microsoft Teams, Email                   |
-| Containers / Isolation           | Docker, Cypress Dashboard                       |
-| Cobertura / Code Coverage        | nyc, JaCoCo, Coverlet                           |
+| Relatórios / Reporting           | Allure, ExtentReports                           |
+| Contêineres / Containers         | Docker, Cypress Dashboard                       |
+| Cobertura de Código / Coverage   | nyc, Coverlet, JaCoCo                           |
+| Comunicação / Team Integration   | Slack, MS Teams, Email                          |
+| Testes de Performance            | JMeter, Blazemeter                              |
 
----
+## 🔁 Processo de Testes / Testing Flow
 
-## 🔁 Processo de Testes / Test Flow
+### 1. Planeamento / Planning
+- Reuniões com stakeholders  
+- Análise dos requisitos (funcionais e técnicos)  
+- Escrita de critérios de aceitação em **Gherkin**  
+- Identificação de fluxos de risco e regressão
 
-### 1. Planejamento / Planning
-- Reuniões com time de produto / Meetings with product team
-- Escrita dos critérios de aceitação (Gherkin) / Writing acceptance criteria
-- Priorização de fluxos críticos / Prioritizing critical flows
-
-### 2. Desenvolvimento / Test Development
-- `describe()` por funcionalidade / per feature  
-- `it()` por cenário / per scenario  
-- Scroll dinâmico com `scrollIntoView()`  
-- Comandos reutilizáveis com `Cypress.Commands.add()`  
-- Dados isolados em `fixtures/`
+### 2. Desenvolvimento de Testes / Test Development
+- Separação de funcionalidades com `describe()`  
+- Cenários detalhados com `it()`  
+- Ações repetidas em comandos (`Cypress.Commands.add()`)  
+- Dados dinâmicos isolados em `fixtures/`  
+- Scroll dinâmico com `scrollIntoView()` para estabilidade
 
 ### 3. Execução / Execution
-- Execução local e CI/CD  
-- Ambientes separados (.env.qa, .env.dev)  
-- Automatização por pull request / trigger on PR
+- Execução local e via pipeline (CI/CD)  
+- Testes por ambiente (QA, DEV, STG) com `.env` isolado  
+- Triggers por Pull Request ou schedule
 
-### 4. Evidências e Relatórios / Evidence & Reports
-- `cy.screenshot()` automático  
-- Vídeos de execução  
-- Allure/ExtentReports com logs e prints  
-- Notificações automatizadas
-
----
+### 4. Evidências e Relatórios / Evidence & Reporting
+- Screenshots automáticos por falha ou passo-chave  
+- Gravações em vídeo completas  
+- Geração automática de relatórios com logs e evidências  
+- Notificação da equipa com o resultado dos testes
 
 ## ✅ Diferenciais / Key Differentials
 
-- Experiência real com CI/CD pipelines
-- Organização, documentação e testes de ponta a ponta
-- Excelente comunicação com equipas técnicas e produto
-- Capacidade de adaptar testes para microserviços, APIs e interfaces
-- Relatórios visuais + evidência automatizada
-
----
+- Experiência real com pipelines CI/CD integrados ao processo de desenvolvimento  
+- Organização e documentação clara de testes E2E e de APIs  
+- Adaptação fácil a projetos de ERP, CRM, microserviços e arquitetura desacoplada  
+- Rigor na geração de evidência automatizada e rastreável  
+- Comunicação fluida com equipas técnicas e de negócio  
+- Testes escritos com foco em valor de negócio e cobertura crítica
 
 📌 **Artur Felipe Albuquerque Portela**  
 🗓️ **Julho 2025 / July 2025**
 
-> Documento elaborado com base na vaga internacional publicada pela **HumanIT** e alinhado ao [Guia de Padronização de Projetos de Teste Automatizados - Artur Portela]
+> Documento adaptado com foco na vaga de QA para projetos de desenvolvimento e transformação digital na **CodeWin**
